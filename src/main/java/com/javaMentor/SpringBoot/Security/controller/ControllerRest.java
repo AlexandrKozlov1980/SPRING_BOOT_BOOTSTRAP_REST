@@ -30,8 +30,7 @@ public class ControllerRest {
 
     @GetMapping("/admin/roles")
     public ResponseEntity<List<Role>> getAllRoles() {
-        List<Role> roles = new ArrayList<>(roleService.allRoles());
-        return new ResponseEntity<>(roles, HttpStatus.OK);
+        return new ResponseEntity<>(new ArrayList<>(roleService.allRoles()), HttpStatus.OK);
     }
 
     @GetMapping("/admin/{id}")
